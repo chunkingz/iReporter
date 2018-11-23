@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iReporter &trade; | Home</title>
+	<meta name= viewport content= "width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/pop-up.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive-form.css">
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+	<header id="indexHeader">
+		<nav>
+			<div class="row clearfix">
+				<img src="images/irep1.png" class="img-logo">
+
+				<ul class="main-nav" id="check-class">
+					<li><a href="#">HOME</a></li>
+					<li><a href="red-flags.html">My RED-FLAGS</a></li>
+					<li><a href="interventions.html">My INTERVENTIONS</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="../">LOGOUT</a></li>
+				</ul>
+				<a href="#" class="mobile-icon"  onclick="slideshow()"> <i class="fa fa-bars"></i> </a>
+			</div>
+		</nav>
+
+		<div class="main-content-header">
+			<h1 id="h1-main"> WELCOME TO <span class="colorchange">iReporter</span>.</h1>
+				<h3 id="h3-main">Report Incidents and Situations. </h3>
+				<h3 id="h3-main">Request Government intervention. </h3>
+				<p>Attach Evidence(s) to support your claim</p>
+			<a href="#add-record-section" class="btn btn-full"> Click to Report/Make a request</a>
+		</div>
+	</header>
+
+<!-- BEGIN ADD INCIDENT SECTION -->
+	
+	<h2 id="add-record-section"><i class="fa fa-plus-circle"></i> Submit Incident</h2>
+
+	<div class="flex-container">
+		
+		<div>
+			<img src="images/irep1.png" alt="">
+			<form>
+				<div class="record-text">
+					<h3>Hints</h3>
+					<p>
+						Intervention Record  ​​
+						<i class="fa fa-info-circle tooltip">
+							<span class="tooltiptext">A call for a government agency to <br>intervene e.g  repair bad road sections, <br>collapsed bridges, flooding e.t.c</span>
+						</i>
+						 , 
+						Red flag Record 
+						<i class="fa fa-info-circle tooltip">
+							<span class="tooltiptext">An incident linked to corruption</span>
+						</i>
+					</p>
+					<h3>Incident form</h3>
+					<div class="container">
+					  <form method="post">
+					  	<div class="row">
+					      <div class="col-75">
+					        <select id="type" name="type">
+					          <option value="">Select Type</option>
+					          <option value="australia">Intervention Record</option>
+					          <option value="canada">Red Flag Record</option>
+					        </select>
+					      </div>
+					    </div>
+					    <div class="row">
+					      <div class="col-75">
+					        <input type="text" id="incident_name" name="incident_name" placeholder="Incident name...">
+					      </div>
+					    </div>
+					    <div class="row">
+					      <div class="col-75">
+					      	<input type="file" name="pic" accept="image/*">
+					      </div>
+					    </div>
+					    <div class="row">
+					      <div class="col-75">
+					        <textarea id="subject" name="subject" placeholder="Give us more details.." style="height:200px"></textarea>
+					      </div>
+					    </div>
+					    <div class="row">
+					      <input type="submit" value="Submit">
+					      <input type="reset" value="Reset">
+					    </div>
+					  </form>
+					</div>
+					<!-- <p> <a href="#"> More... </a></p> -->
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+	</div>
+
+<!-- END ADD RECORD SECTION -->
+
+<!-- BEGIN RECORDS SECTION -->
+	
+	<h2 id="records-section"><i class="fa fa-list-alt"></i> Records Section</h2>
+
+	<div class="flex-container">
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Red flag Record</h2>
+					<h3>Incident summary</h3>
+					<p> <a href="#"> More... </a></p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Red flag Record</h2>
+					<h3>Incident summary</h3>
+					<p> <a href="#"> More... </a></p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep1.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Intervention Record</h2>
+					<h3>Incident summary</h3>
+					<p> <a href="#"> More... </a></p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep1.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Intervention Record</h2>
+					<h3>Incident summary</h3>
+					<p> <a href="#"> More... </a></p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+	</div>
+
+<!-- END RECORDS SECTION -->
+
+<!-- BEGIN FOOTER SECTION -->
+
+	<footer>
+		<p>iReporter <sup>&copy;</sup> 2018, All rights reserved</p>
+	</footer>
+
+<!-- END FOOTER SECTION -->
+
+	<script type="text/javascript">
+		
+		function slideshow(){
+			 var x = document.getElementById('check-class');
+			 if(x.style.display == "none"){
+			 	x.style.display="block";
+			 }else{
+			 	x.style.display="none";
+			 }
+		}	
+
+	</script>
+
+</body>
+</html>
