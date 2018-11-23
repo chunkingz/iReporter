@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iReporter &trade; | List Records</title>
+	<meta name= viewport content= "width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+	<header>
+		<nav>
+			<div class="row clearfix">
+				<img src="images/irep1.png" class="img-logo">
+
+				<ul class="main-nav animated slideInDown" id="check-class">
+					<li><a href="admin.html">HOME</a></li>
+					<li><a href="under-investigation.html">UNDER INVESTIGATION </a></li>
+					<li><a href="rejected.html">REJECTED</a></li>
+					<li><a href="resolved.html">RESOLVED</a></li>
+					<li><a href="index.html">LOGOUT</a></li>
+				</ul>
+				<a href="#" class="mobile-icon"  onclick="slideshow()"> <i class="fa fa-bars"></i> </a>
+			</div>
+		</nav>
+
+	</header>
+
+	<h1 id="order-menu">List Of All User Records</h1>
+
+	<div class="table-container">
+		<table>
+				<tr>
+					<th></th>
+					<th>S/N</th>
+					<th>TITLE</th>
+					<th>Details</th>
+					<th>Coords</th>
+					<th>DATE</th>
+					<th>STATUS</th>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>1</td>
+					<td>New red flag</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>2</td>
+					<td>New Intervention</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>3</td>
+					<td>New Intervention</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>4</td>
+					<td>New Intervention</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>5</td>
+					<td>New Intervention</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				<tr>
+					<td>
+						<label class="container">
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</td>
+					<td>6</td>
+					<td>New Intervention</td>
+					<td>some extra details</td>
+					<td></td>
+					<td>22/11/2018</td>
+					<td>Pending</td>
+				</tr>
+				
+			</table>
+	</div>
+
+	<div id="actions">
+		<button class="actionBtn">ACCEPT</button>&nbsp;&nbsp;
+		<button class="actionBtn">REJECT</button>
+		<button class="actionBtn">UNDER INVESTIGATION</button>
+	</div>
+
+	<footer>
+		<p>iReporter <sup>&copy;</sup> 2018, All rights reserved</p>
+	</footer>
+
+	<script type="text/javascript">
+		
+		function slideshow(){
+			 var x = document.getElementById('check-class');
+			 if(x.style.display === "none"){
+			 	x.style.display="block";
+			 }else{
+			 	x.style.display="none";
+			 }
+		}	
+
+	</script>
+
+</body>
+</html>
