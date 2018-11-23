@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iReporter &trade; | My Interventions </title>
+	<meta name= viewport content= "width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/responsive-form.css">
+	<link rel="stylesheet" type="text/css" href="css/edit-modal.css">
+	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+	<header>
+		<nav>
+			<div class="row clearfix">
+				<img src="images/irep1.png" class="img-logo">
+
+				<ul class="main-nav" id="check-class">
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="red-flags.html">My RED-FLAGS</a></li>
+					<li><a href="#">My INTERVENTIONS</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="../">LOGOUT</a></li>
+				</ul>
+				<a href="#" class="mobile-icon"  onclick="slideshow()"> <i class="fa fa-bars"></i> </a>
+			</div>
+		</nav>
+
+	</header>
+
+	<!-- BEGIN RECORDS SECTION -->
+	
+	<h2 id="records-section"><i class="fa fa-list-alt"></i> My Interventions Section</h2>
+
+	<div class="flex-container">
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Interventions Record</h2>
+					<h3>Incident summary</h3>
+					<p> 
+						<span id="edit-span"><a href="#" onclick="document.getElementById('open-modal').style.display='block'"> Edit </a> <i class="fa fa-edit"></i></span>
+						<span id="edit-span2"><a href="#"> Delete </a> <i class="fa fa-trash"></i></span>
+					</p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Interventions Record</h2>
+					<h3>Incident summary</h3>
+					<p> 
+						<span id="edit-span"><a href="#" onclick="document.getElementById('open-modal').style.display='block'"> Edit </a> <i class="fa fa-edit"></i></span>
+						<span id="edit-span2"><a href="#"> Delete </a> <i class="fa fa-trash"></i></span>
+					</p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Interventions Record</h2>
+					<h3>Incident summary</h3>
+					<p> 
+						<span id="edit-span"><a href="#" onclick="document.getElementById('open-modal').style.display='block'"> Edit </a> <i class="fa fa-edit"></i></span>
+						<span id="edit-span2"><a href="#"> Delete </a> <i class="fa fa-trash"></i></span>
+					</p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+		<div>
+			<img src="images/irep3.png" alt="">
+			<form>
+				<div class="record-text">
+					<h2>Type: Interventions Record</h2>
+					<h3>Incident summary</h3>
+					<p> 
+						<span id="edit-span"><a href="#" onclick="document.getElementById('open-modal').style.display='block'"> Edit </a> <i class="fa fa-edit"></i></span>
+						<span id="edit-span2"><a href="#"> Delete </a> <i class="fa fa-trash"></i></span>
+					</p>
+					<!-- <button class="addMeal">Add to cart</button> -->
+				</div>
+			</form>
+		</div>
+	</div>
+
+<!-- END RECORDS SECTION -->
+
+<!-- BEGIN MODAL SECTION -->
+
+<!-- <button onclick="document.getElementById('open-modal').style.display='block'" style="width:auto;">Login</button> -->
+
+<div id="open-modal" class="modal" style="padding: 10px;">
+  
+  <form class="modal-content animate" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('open-modal').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="images/favicon/android-icon-192x192.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+
+    <select id="type" name="type" required>
+      <option value="">Select Type</option>
+      <option value="australia">Intervention Record</option>
+      <option value="canada">Red Flag Record</option>
+    </select>
+
+      <input type="text" placeholder="Incident name..." name="incident_name" required>
+
+      <input type="file" name="pic" accept="image/*">
+
+      <textarea id="subject" name="subject" placeholder="Give us more details.." style="height:200px" required></textarea>
+        
+      <button type="submit">Save</button>
+    </div>
+
+  </form>
+</div>
+
+<!-- END MODAL SECTION -->
+
+	<footer>
+		<p>iReporter <sup>&copy;</sup> 2018, All rights reserved</p>
+	</footer>
+
+	<script type="text/javascript">
+		
+		function slideshow(){
+			 var x = document.getElementById('check-class');
+			 if(x.style.display === "none"){
+			 	x.style.display="block";
+			 }else{
+			 	x.style.display="none";
+			 }
+		}	
+
+		// Get the modal
+		var modal = document.getElementById('open-modal');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+
+	</script>
+
+</body>
+</html>
