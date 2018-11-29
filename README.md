@@ -25,3 +25,6 @@
 
 # Project Management
 This project is managed on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2226540)
+
+# Developer
+chunkingz :trollface:
