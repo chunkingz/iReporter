@@ -1,4 +1,7 @@
-# iReporter [![Build Status](https://travis-ci.com/chunkingz/iReporter.svg?branch=develop)](https://travis-ci.com/chunkingz/iReporter)
+# iReporter 
+
+### Build & Coverage status
+[![Build Status](https://travis-ci.com/chunkingz/iReporter.svg?branch=develop)](https://travis-ci.com/chunkingz/iReporter) [![Coverage Status](https://coveralls.io/repos/github/chunkingz/iReporter/badge.svg?branch=develop)](https://coveralls.io/github/chunkingz/iReporter?branch=develop)
 
 `Project Overview :`
 > Corruption is a huge bane to Africa’s development. African countries must develop novel and  localised solutions that will curb this menace, hence the birth of iReporter. 
