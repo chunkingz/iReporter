@@ -11,6 +11,10 @@ const incidentStatusArray = [
 ];
 const result = incident.filter(res1 => res1.type === 'red-flag');
 
+function checkInci(req) {
+  return incident.find(c => c.id === parseInt(req, 10));
+}
+
 class redFlagController {
   getAllRedFlags(req, res) {
     return res.status(200).send({
@@ -34,8 +38,8 @@ class redFlagController {
           }],
         });
       }
-      const inci = incident.find(c => c.id === parseInt(req.params.id, 10));
-      if (!inci) return res.status(404).send('id not found');
+
+      if (!checkInci(req.params.id)) return res.status(404).send('id not found');
     });
     return res.status(400).send({
       status: 400,
@@ -80,7 +84,7 @@ class redFlagController {
 
   updateRedFlag(req, res) {
     // check if it exists
-    const inci = incident.find(c => c.id === parseInt(req.params.id, 10));
+    const inci = checkInci(req.params.id);
     if (!inci) {
       return res.status(404).send({
         status: 404,
@@ -132,7 +136,7 @@ class redFlagController {
 
   deleteRedFlag(req, res) {
     // check if it exists
-    const inci = incident.find(c => c.id === parseInt(req.params.id, 10));
+    const inci = checkInci(req.params.id);
     if (!inci) {
       return res.status(404).send({
         status: 404,
