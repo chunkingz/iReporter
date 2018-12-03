@@ -218,7 +218,7 @@ button.addMeal:hover, .btnCheckout:hover {
 
 
 .colorchange{
-	animation:  fastfoodfast-colorrandomizer 2s infinite;
+	animation:  ireporter-colorrandomizer 2s infinite;
 }
 
 /* For Cart Table */
@@ -253,7 +253,7 @@ footer > p {
 	font-weight: bold;
 }
 
-@keyframes fastfoodfast-colorrandomizer{
+@keyframes ireporter-colorrandomizer{
 	0%{color: red;}
 	25%{color:yellow; }
 	50%{ color: white; }
