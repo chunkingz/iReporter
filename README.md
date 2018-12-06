@@ -12,6 +12,9 @@
 # UI Templates
 * Find the app hosted [here](https://chunkingz.github.io/iReporter/) on Github pages
 
+# API
+* The api backend is hosted on [heroku here](https://ireporter-kf.herokuapp.com/)
+
 # Implemented Features
 - Users can create a ​red-flag ​​record (An incident linked to corruption). 
 - Users can create ​intervention​​ record​ ​​(a call for a government agency to intervene e.g  repair bad road sections, collapsed bridges, flooding e.t.c). 
