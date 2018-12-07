@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>iReporter &trade; | Resolved Records</title>
 	<meta name= viewport content= "width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/admin-style.css">
+	<link rel="stylesheet" type="text/css" href="css/admin-responsive-topnav.css">
+	<link rel="stylesheet" type="text/css" href="css/admin-table-checkbox.css">
+	<link rel="stylesheet" type="text/css" href="css/admin-responsive-table.css">
 	<link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -29,7 +32,7 @@
 </head>
 <body>
 
-	<header>
+	<header id="main-menu">
 		<nav>
 			<div class="row clearfix">
 				<img src="images/irep1.png" class="img-logo">
@@ -39,77 +42,89 @@
 					<li><a href="under-investigation.html">UNDER INVESTIGATION </a></li>
 					<li><a href="rejected.html">REJECTED</a></li>
 					<li><a href="#">RESOLVED</a></li>
-					<li><a href="index.html">LOGOUT</a></li>
+					<li><a href="../index.html">LOGOUT</a></li>
 				</ul>
-				<a href="#" class="mobile-icon"  onclick="slideshow()"> <i class="fa fa-bars"></i> </a>
 			</div>
 		</nav>
 
 	</header>
 
-	<h1 id="order-menu">List Of Resolved Records</h1>
-
-	<div class="table-container">
-		<table>
-				<tr>
-					<th>S/N</th>
-					<th>TITLE</th>
-					<th>Details</th>
-					<th>Coords</th>
-					<th>DATE</th>
-					<th>STATUS</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>New red flag</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>New red flag</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>New red flag</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>New Intervention</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>New Intervention</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>New Intervention</td>
-					<td>some extra details</td>
-					<td></td>
-					<td>22/11/2018</td>
-					<td>Resolved</td>
-				</tr>
-				
-			</table>
+	<div id="sub-menu">
+		<div class="topnav" id="myTopnav">
+			<a href="#" class="active"><i class="fa fa-home"></i></a>
+			<a href="admin.html">HOME</a>
+			<a href="under-investigation.html">UNDER INVESTIGATION</a>
+			<a href="rejected.html">REJECTED</a>
+			<a href="resolved.html">RESOLVED</a>
+			<a href="../index.html">LOGOUT</a>
+			<a href="javascript:void(0);" class="icon" onclick="mobile()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
 	</div>
+
+	<h1 id="records-header">List Of Resolved Records</h1>
+
+	<table>
+			<thead>
+			  <tr>
+				<th>S/N</th>
+				<th>TITLE</th>
+				<th>Details</th>
+				<th>Coords</th>
+				<th>Attachment</th>
+				<th>DATE</th>
+				<th>STATUS</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td data-column="S/N">1</td>
+				<td data-column="TITLE">Red flag title</td>
+				<td data-column="DETAILS">some extra details</td>
+				<td data-column="COORDS"></td>
+				<td data-column="ATTACHMENT"></td>
+				<td data-column="DATE">23/11/2018</td>
+				<td data-column="STATUS">resolved</td>
+			  </tr>
+			  <tr>
+				<td data-column="S/N">2</td>
+				<td data-column="TITLE">Red flag title</td>
+				<td data-column="DETAILS">some extra details</td>
+				<td data-column="COORDS"> </td>
+				<td data-column="ATTACHMENT"></td>
+				<td data-column="DATE">2/12/2018</td>
+				<td data-column="STATUS">resolved</td>
+			  </tr>
+			  <tr>
+				<td data-column="S/N">3</td>
+				<td data-column="TITLE">Red flag title</td>
+				<td data-column="DETAILS">some extra details</td>
+				<td data-column="COORDS"> </td>
+				<td data-column="ATTACHMENT"></td>
+				<td data-column="DATE">5/12/2018</td>
+				<td data-column="STATUS">resolved</td>
+			  </tr>
+			  <tr>
+				<td data-column="S/N">4</td>
+				<td data-column="TITLE">New Intervention</td>
+				<td data-column="DETAILS">some extra details</td>
+				<td data-column="COORDS"> </td>
+				<td data-column="ATTACHMENT"></td>
+				<td data-column="DATE">6/12/2018</td>
+				<td data-column="STATUS">resolved</td>
+			  </tr>
+			  <tr>
+				<td data-column="S/N">5</td>
+				<td data-column="TITLE">New Intervention</td>
+				<td data-column="DETAILS">some extra details</td>
+				<td data-column="COORDS"> </td>
+				<td data-column="ATTACHMENT"></td>
+				<td data-column="DATE">6/12/2018</td>
+				<td data-column="STATUS">resolved</td>
+			  </tr>
+			</tbody>
+		  </table>
 
 	<footer>
 		<p>Fast Food Fast <sup>&copy;</sup> 2018, All rights reserved</p>
@@ -118,13 +133,22 @@
 	<script type="text/javascript">
 		
 		function slideshow(){
-			 var x = document.getElementById('check-class');
+			let x = document.getElementById('check-class');
 			 if(x.style.display === "none"){
 			 	x.style.display="block";
 			 }else{
 			 	x.style.display="none";
 			 }
 		}	
+
+		function mobile() {
+			let x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+				x.className += " responsive";
+			} else {
+				x.className = "topnav";
+			}
+		}
 
 	</script>
 

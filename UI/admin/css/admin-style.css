@@ -4,12 +4,15 @@
 	box-sizing: border-box;
 }
 
+#sub-menu{
+	display: none;
+}
+
 body{
 	font-size: 20px;
 	overflow-x: hidden;
 	color: white;
 	font-family: 'Flamenco', cursive;
-	/* border: 10px solid black; */
 }
 
 header#indexHeader{
@@ -20,7 +23,6 @@ header#indexHeader{
 	height: 100vh;
 }
 header{
-	/* background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('../images/pexels3.jpeg'); */
 	background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1537907100179-fc6d314aa5f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -36,17 +38,16 @@ header{
 	clear: both;
 }
 
-/* .row{
+.row{
 	max-width: 1180px;
 	margin: 0 auto;
-} */
+}
 
 .img-logo{
 	height: 90px;
 	width: auto;
 	float: left;
 	margin-top: 20px;
-	margin-left: 10px;
 	opacity: 0.7;
 	border-radius: 50%;
 }
@@ -61,7 +62,6 @@ header{
 .main-nav{
 	float: right;
 	margin-top: 60px;
-	margin-right: 10px;
 }
 
 .main-nav li{
@@ -96,33 +96,21 @@ header{
 
 div.main-content-header > h1#h1-main, h3#h3-main{
 	color: #fff;
-	font-size: 270%;  
+	font-size: 240%;  
 	word-spacing: 5px;
 	letter-spacing: 3px;
 	margin-bottom: 20px;
-	/*text-transform: uppercase;*/
+	text-transform: uppercase;
 	font-weight: lighter;
 }
 div.main-content-header > p {
 	color: #fff;
-	font-size: 100%;  
-	word-spacing: 5px;
+	font-size: 150%;  
+	word-spacing: 4px;
 	letter-spacing: 2px;
 	margin-bottom: 20px;
 	/*text-transform: capitalize;*/
 	font-weight: lighter;
-}
-
-h2#add-record-section, h2#records-section{
-	color: red;
-	font-size: 140%;  
-	word-spacing: 5px;
-	letter-spacing: 3px;
-	margin-bottom: 30px;
-	margin-top: 50px;
-	text-transform: uppercase;
-	font-weight: lighter;
-	text-align: center;
 }
 
 .flex-container {
@@ -133,17 +121,17 @@ h2#add-record-section, h2#records-section{
 	margin-bottom: 50px;
 	padding: 50px;
 }
-
-.style-section {
-	border-top: 50px solid #aaa;
-	padding-top: 40px;
-}
   
 .flex-container > div {
 	color: #000;
 	text-align: center;
 	line-height: 50px;
 	font-size: 20px;
+}
+
+div.meal-text {
+	font-size: 1rem;
+	color: #000;
 }
 
 #total {
@@ -166,6 +154,7 @@ h2#add-record-section, h2#records-section{
 	color: #fff;
 	margin-right: 15px;
 	border: 2px solid #D02126;
+	font-size: 180%;
 }
 
 .btn-full:hover{
@@ -185,27 +174,40 @@ h2#add-record-section, h2#records-section{
 
 
 .colorchange{
-	animation:  ireporter-colorrandomizer 2s infinite;
+	animation:  fastfoodfast-colorrandomizer 2s infinite;
 }
 
-table {
-    border-collapse: collapse;
-    width: 70%;
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
 
-th, td {
-    text-align: left;
-	padding: 8px;
+input[type=submit] {
+	width: 100%;
+	background-color: #D02126;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: #BC9B5C;
 	color: #000;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
-
-th {
-    background-color: #D02126;
-    color: white;
+div#formDiv {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
 }
-
 
 footer {
 	padding: 20px;
@@ -217,7 +219,7 @@ footer > p {
 	font-weight: bold;
 }
 
-@keyframes ireporter-colorrandomizer{
+@keyframes fastfoodfast-colorrandomizer{
 	0%{color: red;}
 	25%{color:yellow; }
 	50%{ color: white; }
@@ -229,7 +231,6 @@ footer > p {
 
 /* Responsiveness begins at home */
 
-
 @media only screen and (max-width: 1180px){
 	.main-content-header{
 		width:100%;
@@ -238,6 +239,13 @@ footer > p {
 }
 
 @media only screen and (max-width: 1024px){
+
+	#main-menu{
+		display: none;
+	}
+	#sub-menu{
+		display: inline;
+	}
 
 	.main-content-header{
 		text-align: center;
@@ -326,20 +334,6 @@ footer > p {
 	}
 
 	.main-nav{display: none;}
-
-	.mobile-icon{ display: inline-block; 
-		color: #fff;
-		float: right;
-		margin-top: 30px;
-		margin-right: 20px;
-	}
-
-	.main-nav{float: left;}
-
-	.main-nav li{
-		display: block;
-		margin-top: 10px;
-	}
 }
 
 @media only screen and (max-width: 430px){
@@ -379,3 +373,4 @@ footer > p {
 		border: 2px solid #D02126;
 	}
 }
+
