@@ -21,28 +21,6 @@ const incident = [
     attachment: '',
     comment: '',
   },
-  {
-    id: 3,
-    title: 'red-flag title',
-    createdOn: new Date().toDateString(),
-    createdBy: 3,
-    type: 'red-flag',
-    location: 'lat-long coords',
-    status: 'under investigation',
-    attachment: '',
-    comment: '',
-  },
-  {
-    id: 4,
-    title: 'red-flag title',
-    createdOn: new Date().toDateString(),
-    createdBy: 2,
-    type: 'intervention',
-    location: 'lat-long coords',
-    status: 'draft',
-    attachment: '',
-    comment: '',
-  },
 ];
 
 export default incident;

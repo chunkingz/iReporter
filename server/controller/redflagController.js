@@ -68,32 +68,16 @@ class redFlagController {
    *
    */
   createRedFlag(req, res) {
-<<<<<<< HEAD
-    const r = req.body;
-    const v = saveNewIncident(r.title,
-      r.createdBy, r.type, r.location,
-      r.status, r.attachment, r.comment);
+    const { body } = req.body;
+    const newIncident = saveNewIncident(body.title,
+      body.createdBy, body.type, body.location,
+      body.status, body.attachment, body.comment);
 
-=======
-    const incident1 = {
-      id: incident.length + 1,
-      title: req.body.title,
-      createdOn: new Date().toDateString(),
-      createdBy: req.body.createdBy,
-      type: req.body.type,
-      location: req.body.location,
-      status: req.body.status,
-      Images: req.body.Images,
-      Videos: req.body.Videos,
-      comment: req.body.comment,
-    };
-    incident.push(incident1);
->>>>>>> 051799c1a262e86dcbb9c39d47c7f81e5581fe76
     return res.status(201).send({
       status: 201,
       data: [{
         message: 'Red flag Record added successfuly',
-        v: v[v.length - 1],
+        newIncident: newIncident[newIncident.length - 1],
       }]
     });
   }

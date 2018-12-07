@@ -1,10 +1,11 @@
 import express from 'express';
 import redflagController from '../controller/redflagController';
 import interventionController from '../controller/interventionController';
-import createIncident from '../middleware/validators/createIncident';
+
 import getIncident from '../middleware/validators/getIncident';
 import updateIncident from '../middleware/validators/updateIncident';
 import deleteIncident from '../middleware/validators/deleteIncident';
+import mainValidator from '../middleware/validators/mainValidator';
 
 const router = express.Router();
 
@@ -21,16 +22,16 @@ router.get('/api/v1/red-flags/:id', getIncident, redflagController.getRedFlag);
 router.get('/api/v1/interventions/:id', getIncident, interventionController.getIntervention);
 
 // create a new red-flag record
-router.post('/api/v1/red-flags', createIncident, redflagController.createRedFlag);
+router.post('/api/v1/red-flags', mainValidator, redflagController.createRedFlag);
 
 // create a new intervention record
-router.post('/api/v1/interventions', createIncident, interventionController.createIntervention);
+router.post('/api/v1/interventions', mainValidator, interventionController.createIntervention);
 
 // update a red-flag record
-router.patch('/api/v1/red-flags/:id', updateIncident, redflagController.updateRedFlag);
+router.patch('/api/v1/red-flags/:id', updateIncident, mainValidator, redflagController.updateRedFlag);
 
 // update an intervention record
-router.patch('/api/v1/interventions/:id', updateIncident, interventionController.updateIntervention);
+router.patch('/api/v1/interventions/:id', updateIncident, mainValidator, interventionController.updateIntervention);
 
 // update a red-flag record comment
 // router.patch('/api/v1/red-flags/:id/comment', redflagController.updateRedFlagComment);

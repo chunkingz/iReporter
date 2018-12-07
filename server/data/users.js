@@ -23,18 +23,6 @@ const users = [
     registered: new Date().toDateString(),
     isAdmin: false,
   },
-  {
-    id: 3,
-    firstname: 'Gabriel',
-    lastname: 'King',
-    othernames: 'Emmanuel',
-    email: 'gab@mail.com',
-    phoneNumber: '2349039933773',
-    username: 'gab',
-    password: 'password',
-    registered: new Date().toDateString(),
-    isAdmin: false,
-  },
 ];
 
 export default users;
