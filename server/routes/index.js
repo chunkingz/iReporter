@@ -1,6 +1,10 @@
 import express from 'express';
 import redflagController from '../controller/redflagController';
 import interventionController from '../controller/interventionController';
+import createIncident from '../middleware/validators/createIncident';
+import getIncident from '../middleware/validators/getIncident';
+import updateIncident from '../middleware/validators/updateIncident';
+import deleteIncident from '../middleware/validators/deleteIncident';
 
 const router = express.Router();
 
@@ -11,22 +15,22 @@ router.get('/api/v1/red-flags', redflagController.getAllRedFlags);
 router.get('/api/v1/interventions', interventionController.getAllInterventions);
 
 // fetch a specific red-flag record
-router.get('/api/v1/red-flags/:id', redflagController.getRedFlag);
+router.get('/api/v1/red-flags/:id', getIncident, redflagController.getRedFlag);
 
 // fetch a specific intervention record
-router.get('/api/v1/interventions/:id', interventionController.getIntervention);
+router.get('/api/v1/interventions/:id', getIncident, interventionController.getIntervention);
 
 // create a new red-flag record
-router.post('/api/v1/red-flags', redflagController.createRedFlag);
+router.post('/api/v1/red-flags', createIncident, redflagController.createRedFlag);
 
 // create a new intervention record
-router.post('/api/v1/interventions', interventionController.createIntervention);
+router.post('/api/v1/interventions', createIncident, interventionController.createIntervention);
 
 // update a red-flag record
-router.patch('/api/v1/red-flags/:id', redflagController.updateRedFlag);
+router.patch('/api/v1/red-flags/:id', updateIncident, redflagController.updateRedFlag);
 
 // update an intervention record
-router.patch('/api/v1/interventions/:id', interventionController.updateIntervention);
+router.patch('/api/v1/interventions/:id', updateIncident, interventionController.updateIntervention);
 
 // update a red-flag record comment
 // router.patch('/api/v1/red-flags/:id/comment', redflagController.updateRedFlagComment);
@@ -36,10 +40,10 @@ router.patch('/api/v1/interventions/:id', interventionController.updateIntervent
 // router.patch('/api/v1/interventions/:id/comment', interventionController.updateInterventionComment);
 
 // Delete a red-flag record
-router.delete('/api/v1/red-flags/:id', redflagController.deleteRedFlag);
+router.delete('/api/v1/red-flags/:id', deleteIncident, redflagController.deleteRedFlag);
 
 // Delete an intervention record
-router.delete('/api/v1/interventions/:id', interventionController.deleteIntervention);
+router.delete('/api/v1/interventions/:id', deleteIncident, interventionController.deleteIntervention);
 
 
 export default router;
