@@ -68,14 +68,15 @@ class interventionnController {
    *
    */
   createIntervention(req, res) {
-    const { body } = req.body;
-    const newIncident = saveNewIncident(body.title,
-      body.createdBy, body.type, body.location,
-      body.status, body.attachment, body.comment);
+    const requestBody = req.body;
+    const newIncident = saveNewIncident(
+      requestBody.title, requestBody.createdBy, requestBody.type, requestBody.location,
+      requestBody.status, requestBody.attachment, requestBody.comment
+    );
     return res.status(201).send({
       status: 201,
       data: [{
-        message: 'Intervention added successfuly',
+        message: 'Intervention added successfully',
         newIncident: newIncident[newIncident.length - 1],
       }]
     });
