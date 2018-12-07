@@ -1,21 +1,29 @@
 /* eslint-disable class-methods-use-this */
 /* eslint-disable array-callback-return */
-/* eslint-disable consistent-return */
-/* eslint-disable require-jsdoc */
 
-// import users from '../data/users';
 import incident from '../data/incident';
+import saveNewIncident from '../helpers/index.helper';
 
-const incidentStatusArray = [
-  'draft', 'under investigation', 'resolved', 'rejected'
-];
 const result = incident.filter(res1 => res1.type === 'red-flag');
 
-function checkInci(req) {
+/**
+ * check if the incident id is correct
+ * @param  {Object} req the request object
+ * @return  {Function} calls the next middleware if test passes
+ */
+function checkIncident(req) {
   return incident.find(c => c.id === parseInt(req, 10));
 }
 
+/** Class representing interventtion records */
 class redFlagController {
+  /**
+   * Get all red flag records.
+   * @param {object} req the request object.
+   * @param {object} res the response object.
+   * @return  {Function} next calls the next middleware
+   *
+   */
   getAllRedFlags(req, res) {
     return res.status(200).send({
       status: 200,
@@ -26,6 +34,13 @@ class redFlagController {
     });
   }
 
+  /**
+   * Get a specific red flag record.
+   * @param {object} req the request object.
+   * @param {object} res the response object.
+   * @return  {Function} next calls the next middleware
+   *
+   */
   getRedFlag(req, res) {
     const id = parseInt(req.params.id, 10);
     incident.map((data) => {
@@ -38,8 +53,6 @@ class redFlagController {
           }],
         });
       }
-
-      if (!checkInci(req.params.id)) return res.status(404).send('id not found');
     });
     return res.status(400).send({
       status: 400,
@@ -47,83 +60,55 @@ class redFlagController {
     });
   }
 
+  /**
+   * Create a new red flag record.
+   * @param {object} req the request object.
+   * @param {object} res the response object.
+   * @return  {Function} next calls the next middleware
+   *
+   */
   createRedFlag(req, res) {
-    if (!req.body.title || req.body.title.length < 5) {
-      return res.status(400).send({
-        status: 400,
-        error: 'incident title is required and should be minimum 5 characters.',
-      });
-    }
-    if (!incidentStatusArray.includes(req.body.status)) {
-      return res.status(400).send({
-        status: 400,
-        error: 'incident status must be set to either of the following: draft, under investigation, resolved, or rejected]',
-      });
-    }
-    const incident1 = {
-      id: incident.length + 1,
-      title: req.body.title,
-      createdOn: new Date().toDateString(),
-      createdBy: req.body.createdBy,
-      type: req.body.type,
-      location: req.body.location,
-      status: req.body.status,
-      Images: req.body.Images,
-      Videos: req.body.Videos,
-      comment: req.body.comment,
-    };
-    incident.push(incident1);
+    const r = req.body;
+    const v = saveNewIncident(r.title,
+      r.createdBy, r.type, r.location,
+      r.status, r.attachment, r.comment);
+
     return res.status(201).send({
       status: 201,
       data: [{
         message: 'Red flag Record added successfuly',
-        incident1,
+        v: v[v.length - 1],
       }]
     });
   }
 
+  /**
+   * Update a red flag record.
+   * @param {object} req the request object.
+   * @param {object} res the response object.
+   * @return  {Function} next calls the next middleware
+   *
+   */
   updateRedFlag(req, res) {
-    // check if it exists
-    const inci = checkInci(req.params.id);
-    if (!inci) {
-      return res.status(404).send({
-        status: 404,
-        error: 'incident not found',
-      });
-    }
-
-    if (!req.body.title || req.body.title.length < 5) {
-      return res.status(400).send({
-        status: 400,
-        error: 'incident title is required and should be minimum 5 characters.',
-      });
-    }
-
-    if (!incidentStatusArray.includes(req.body.status)) {
-      return res.status(400).send({
-        status: 400,
-        error: 'incident status must be set to either of the following: draft, under investigation, resolved, or rejected]',
-      });
-    }
+    const incidentId = checkIncident(req.params.id);
 
     const id = parseInt(req.params.id, 10);
     incident.map((data) => {
       if (data.id === id && data.type === 'red-flag') {
-        // insert values
-        inci.title = req.body.title;
-        inci.createdOn = req.body.createdOn;
-        inci.createdBy = req.body.createdBy;
-        inci.type = req.body.type;
-        inci.location = req.body.location;
-        inci.status = req.body.status;
-        inci.Images = req.body.Images;
-        inci.Videos = req.body.Videos;
-        inci.comment = req.body.comment;
+        incidentId.title = req.body.title;
+        incidentId.createdOn = req.body.createdOn;
+        incidentId.createdBy = req.body.createdBy;
+        incidentId.type = req.body.type;
+        incidentId.location = req.body.location;
+        incidentId.status = req.body.status;
+        incidentId.Images = req.body.Images;
+        incidentId.Videos = req.body.Videos;
+        incidentId.comment = req.body.comment;
         return res.status(201).send({
           status: 201,
           data: [{
             message: 'Incident record updated successfully',
-            inci,
+            incidentId,
           }],
         });
       }
@@ -134,22 +119,23 @@ class redFlagController {
     });
   }
 
+  /**
+   * Delete a red flag record.
+   * @param {object} req the request object.
+   * @param {object} res the response object.
+   * @return  {Function} next calls the next middleware
+   *
+   */
   deleteRedFlag(req, res) {
     // check if it exists
-    const inci = checkInci(req.params.id);
-    if (!inci) {
-      return res.status(404).send({
-        status: 404,
-        error: 'incident not found',
-      });
-    }
+    const incidentId = checkIncident(req.params.id);
 
     const id = parseInt(req.params.id, 10);
     incident.map((data) => {
       if (data.id === id && data.type === 'red-flag') {
         // Delete the incident
         // using its id
-        const index = incident.indexOf(inci);
+        const index = incident.indexOf(incidentId);
         incident.splice(index, 1);
 
         // Return it

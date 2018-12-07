@@ -7,8 +7,7 @@ const incident = [
     type: 'red-flag',
     location: 'lat-long coords',
     status: 'resolved',
-    Images: '',
-    Videos: '',
+    attachment: '',
     comment: '',
   },
   {
@@ -19,8 +18,7 @@ const incident = [
     type: 'intervention',
     location: 'lat-long coords',
     status: 'draft',
-    Images: '',
-    Videos: '',
+    attachment: '',
     comment: '',
   },
   {
@@ -31,8 +29,7 @@ const incident = [
     type: 'red-flag',
     location: 'lat-long coords',
     status: 'under investigation',
-    Images: '',
-    Videos: '',
+    attachment: '',
     comment: '',
   },
   {
@@ -43,8 +40,7 @@ const incident = [
     type: 'intervention',
     location: 'lat-long coords',
     status: 'draft',
-    Images: '',
-    Videos: '',
+    attachment: '',
     comment: '',
   },
 ];

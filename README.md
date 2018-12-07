@@ -20,11 +20,8 @@
 - Users can create ​intervention​​ record​ ​​(a call for a government agency to intervene e.g  repair bad road sections, collapsed bridges, flooding e.t.c). 
 - Users can edit their ​red-flag ​​or ​intervention ​​records. 
 - Users can delete their ​red-flag ​​or ​intervention ​​records. 
-- Users can add geolocation (Lat Long Coordinates) to their ​red-flag ​​or ​intervention  records​. 
-- Users can change the geolocation (Lat Long Coordinates) attached to their ​red-flag ​​or  intervention ​​records​. 
 - Users can add images to their ​red-flag ​​or​ intervention ​​records, to support their claims. 
 - Users can add videos to their ​red-flag ​​or​ intervention ​​records, to support their claims. 
-- The user gets real-time email notification when Admin changes the ​status ​​of their record. 
 
 # Project Management
 This project is managed on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2226540)
