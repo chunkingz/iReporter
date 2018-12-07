@@ -12,7 +12,7 @@ const result = incident.filter(res1 => res1.type === 'intervention');
  * @return  {Function} calls the next middleware if test passes
  */
 function checkIncident(req) {
-  return incident.find(c => c.id === parseInt(req, 10));
+  return incident.find(dbIncident => dbIncident.id === parseInt(req, 10) && dbIncident.type === 'intervention');
 }
 
 /** Class representing interventtion records */
@@ -42,18 +42,17 @@ class interventionnController {
    *
    */
   getIntervention(req, res) {
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'intervention') {
-        return res.status(200).send({
-          status: 200,
-          data: [{
-            message: 'Record retrieved successfully',
-            data,
-          }],
-        });
-      }
-    });
+    const data = checkIncident(req.params.id);
+    // console.log(id);
+    if (data !== undefined) {
+      return res.status(200).send({
+        status: 200,
+        data: [{
+          message: 'Record retrieved successfully',
+          data,
+        }],
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to an intervention record',
@@ -91,29 +90,25 @@ class interventionnController {
    */
   updateIntervention(req, res) {
     const incidentId = checkIncident(req.params.id);
-
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'intervention') {
-        // insert values
-        incidentId.title = req.body.title;
-        incidentId.createdOn = req.body.createdOn;
-        incidentId.createdBy = req.body.createdBy;
-        incidentId.type = req.body.type;
-        incidentId.location = req.body.location;
-        incidentId.status = req.body.status;
-        incidentId.Images = req.body.Images;
-        incidentId.Videos = req.body.Videos;
-        incidentId.comment = req.body.comment;
-        return res.status(201).send({
-          status: 201,
-          data: [{
-            message: 'Incident record updated successfully',
-            incidentId,
-          }],
-        });
-      }
-    });
+    // console.log(incidentId);
+    if (incidentId !== undefined) {
+      incidentId.title = req.body.title;
+      incidentId.createdOn = req.body.createdOn;
+      incidentId.createdBy = req.body.createdBy;
+      incidentId.type = req.body.type;
+      incidentId.location = req.body.location;
+      incidentId.status = req.body.status;
+      incidentId.Images = req.body.Images;
+      incidentId.Videos = req.body.Videos;
+      incidentId.comment = req.body.comment;
+      return res.status(201).send({
+        status: 201,
+        data: [{
+          message: 'Incident record updated successfully',
+          incidentId,
+        }],
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to an intervention record',
@@ -129,28 +124,25 @@ class interventionnController {
    */
   deleteIntervention(req, res) {
     // check if it exists
-    const incidentId = incident.find(c => c.id === parseInt(req.params.id, 10));
+    const incidentId = checkIncident(req.params.id);
 
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'intervention') {
-        // Delete the incident
-        // using its id
-        const index = incident.indexOf(incidentId);
-        incident.splice(index, 1);
+    if (incidentId !== undefined) {
+      // Delete the incident
+      // using its id
+      const index = incident.indexOf(incidentId);
+      incident.splice(index, 1);
 
-        // Return it
-        const delResult = incident.filter(res1 => res1.type === 'intervention');
+      // Return it
+      const delResult = incident.filter(res1 => res1.type === 'intervention');
 
-        return res.status(200).send({
-          status: 200,
-          data: [{
-            message: 'Incident Deleted successfully',
-            delResult,
-          }]
-        });
-      }
-    });
+      return res.status(200).send({
+        status: 200,
+        data: [{
+          message: 'Incident Deleted successfully',
+          delResult,
+        }]
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to an intervention record',

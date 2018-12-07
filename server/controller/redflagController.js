@@ -12,7 +12,7 @@ const result = incident.filter(res1 => res1.type === 'red-flag');
  * @return  {Function} calls the next middleware if test passes
  */
 function checkIncident(req) {
-  return incident.find(c => c.id === parseInt(req, 10));
+  return incident.find(dbIncident => dbIncident.id === parseInt(req, 10) && dbIncident.type === 'red-flag');
 }
 
 /** Class representing interventtion records */
@@ -42,18 +42,17 @@ class redFlagController {
    *
    */
   getRedFlag(req, res) {
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'red-flag') {
-        return res.status(200).send({
-          status: 200,
-          data: [{
-            message: 'Record retrieved successfully',
-            data,
-          }],
-        });
-      }
-    });
+    const data = checkIncident(req.params.id);
+    // console.log(id);
+    if (data !== undefined) {
+      return res.status(200).send({
+        status: 200,
+        data: [{
+          message: 'Record retrieved successfully',
+          data,
+        }],
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to a red flag record',
@@ -70,7 +69,7 @@ class redFlagController {
   createRedFlag(req, res) {
     const requestBody = req.body;
     const newIncident = saveNewIncident(
-      requestBody.title, requestBody.createdBy, requestBody.type, requestBody.location, 
+      requestBody.title, requestBody.createdBy, requestBody.type, requestBody.location,
       requestBody.status, requestBody.attachment, requestBody.comment
     );
 
@@ -93,27 +92,24 @@ class redFlagController {
   updateRedFlag(req, res) {
     const incidentId = checkIncident(req.params.id);
 
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'red-flag') {
-        incidentId.title = req.body.title;
-        incidentId.createdOn = req.body.createdOn;
-        incidentId.createdBy = req.body.createdBy;
-        incidentId.type = req.body.type;
-        incidentId.location = req.body.location;
-        incidentId.status = req.body.status;
-        incidentId.Images = req.body.Images;
-        incidentId.Videos = req.body.Videos;
-        incidentId.comment = req.body.comment;
-        return res.status(201).send({
-          status: 201,
-          data: [{
-            message: 'Incident record updated successfully',
-            incidentId,
-          }],
-        });
-      }
-    });
+    if (incidentId !== undefined) {
+      incidentId.title = req.body.title;
+      incidentId.createdOn = req.body.createdOn;
+      incidentId.createdBy = req.body.createdBy;
+      incidentId.type = req.body.type;
+      incidentId.location = req.body.location;
+      incidentId.status = req.body.status;
+      incidentId.Images = req.body.Images;
+      incidentId.Videos = req.body.Videos;
+      incidentId.comment = req.body.comment;
+      return res.status(201).send({
+        status: 201,
+        data: [{
+          message: 'Incident record updated successfully',
+          incidentId,
+        }],
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to a red flag record',
@@ -131,26 +127,23 @@ class redFlagController {
     // check if it exists
     const incidentId = checkIncident(req.params.id);
 
-    const id = parseInt(req.params.id, 10);
-    incident.map((data) => {
-      if (data.id === id && data.type === 'red-flag') {
-        // Delete the incident
-        // using its id
-        const index = incident.indexOf(incidentId);
-        incident.splice(index, 1);
+    if (incidentId !== undefined) {
+      // Delete the incident
+      // using its id
+      const index = incident.indexOf(incidentId);
+      incident.splice(index, 1);
 
-        // Return it
-        const delResult = incident.filter(res1 => res1.type === 'red-flag');
+      // Return it
+      const delResult = incident.filter(res1 => res1.type === 'red-flag');
 
-        return res.status(200).send({
-          status: 200,
-          data: [{
-            message: 'Incident Deleted successfully',
-            delResult,
-          }]
-        });
-      }
-    });
+      return res.status(200).send({
+        status: 200,
+        data: [{
+          message: 'Incident Deleted successfully',
+          delResult,
+        }]
+      });
+    }
     return res.status(400).send({
       status: 400,
       error: 'That id does not belong to a red flag record',
