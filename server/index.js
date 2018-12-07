@@ -23,7 +23,7 @@ app.all('*', (req, res) => {
 });
 
 // start server on port
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT || 3000, () => {
   // eslint-disable-next-line no-console
   console.log('iReporter app running on port.', server.address().port);
 });
